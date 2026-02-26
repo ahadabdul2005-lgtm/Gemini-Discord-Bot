@@ -19,9 +19,6 @@ import {
   HarmBlockThreshold,
   HarmCategory
 } 
-  const app = express();
-app.get('/', (req, res) => res.send('Bot Online'));
-app.listen(process.env.PORT || 3000);
 
   from '@google/genai';
 import fs from 'fs/promises';
@@ -33,10 +30,10 @@ import {
   getTextExtractor
 } from 'office-text-extractor'
 import osu from 'node-os-utils';
-const mem = osu.mem; // Correction pour Render
-const cpu = osu.cpu; // Correction pour Render
 
 import axios from 'axios';
+import express from 'express';
+
 
 import config from './config.js';
 import {
@@ -70,6 +67,13 @@ const MODEL = "gemini-2.5-flash";
 `BLOCK_LOW_AND_ABOVE`  -  Block when low, medium or high probability of unsafe content
 `HARM_BLOCK_THRESHOLD_UNSPECIFIED`  -  Threshold is unspecified, block using default threshold
 */
+const app = express();
+app.get('/', (req, res) => res.send('Bot Online'));
+app.listen(process.env.PORT || 3000);
+
+const mem = osu.mem; // Correction pour Render
+const cpu = osu.cpu; // Correction pour Render
+
 const safetySettings = [{
     category: HarmCategory.HARM_CATEGORY_HARASSMENT,
     threshold: HarmBlockThreshold.BLOCK_NONE,
