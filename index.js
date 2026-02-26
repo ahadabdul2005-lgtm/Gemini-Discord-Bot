@@ -18,7 +18,12 @@ import {
 import {
   HarmBlockThreshold,
   HarmCategory
-} from '@google/genai';
+} 
+  const app = express();
+app.get('/', (req, res) => res.send('Bot Online'));
+app.listen(process.env.PORT || 3000);
+
+  from '@google/genai';
 import fs from 'fs/promises';
 import {
   createWriteStream
@@ -28,10 +33,9 @@ import {
   getTextExtractor
 } from 'office-text-extractor'
 import osu from 'node-os-utils';
-const {
-  mem,
-  cpu
-} = osu;
+const mem = osu.mem; // Correction pour Render
+const cpu = osu.cpu; // Correction pour Render
+
 import axios from 'axios';
 
 import config from './config.js';
