@@ -61,7 +61,7 @@ initialize().catch(console.error);
 
 // <=====[Configuration]=====>
 
-const MODEL = "gemini-2.5-flash";
+const MODEL = "gemini-2.0-flash";
 
 /*
 `BLOCK_NONE`  -  Always show regardless of probability of unsafe content
