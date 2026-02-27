@@ -2268,6 +2268,7 @@ async function sendAsTextFile(text, message, orgId) {
 
 // <==========>
 // <=====[ Connexion finale avec Debug ]=====>
+console.log("DEBUG - Début du token :", token ? token.substring(0, 5) + "..." : "VIDE");
 
 console.log("🚀 Lancement de la connexion Discord...");
 
