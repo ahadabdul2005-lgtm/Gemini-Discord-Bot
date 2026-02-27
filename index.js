@@ -2273,5 +2273,3 @@ client.login(token)
     console.error("❌ ÉCHEC DE CONNEXION DISCORD :");
     console.error(err);
   });
-
-client.login(token);
