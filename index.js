@@ -2267,9 +2267,15 @@ async function sendAsTextFile(text, message, orgId) {
 }
 
 // <==========>
+// <=====[ Connexion finale avec Debug ]=====>
+
+console.log("🚀 Lancement de la connexion Discord...");
+
 client.login(token)
-  .then(() => console.log("✅ Connexion réussie à Discord !"))
+  .then(() => {
+    console.log("✅ CONNEXION RÉUSSIE ! Le bot est en ligne.");
+  })
   .catch(err => {
-    console.error("❌ ÉCHEC DE CONNEXION DISCORD :");
-    console.error(err);
+    console.error("❌ ERREUR DE CONNEXION DISCORD :");
+    console.error(err.message); // Cela affichera la raison exacte (ex: Token invalide)
   });
