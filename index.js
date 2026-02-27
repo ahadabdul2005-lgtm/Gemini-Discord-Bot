@@ -51,6 +51,14 @@ import {
   getUserResponsePreference,
   initializeBlacklistForGuild
 } from './botManager.js';
+import {
+  delay,
+  retryOperation,
+} from './tools/others.js';
+
+import {
+  commands
+} from './commands.js';
 
 initialize().catch(console.error);
 
@@ -117,10 +125,6 @@ app.listen(port, () => {
 });
 
 
-import {
-  delay,
-  retryOperation,
-} from './tools/others.js';
 
 // <==========>
 
