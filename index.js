@@ -59,7 +59,8 @@ initialize().catch(console.error);
 // <=====[Configuration]=====>
 
 const MODEL = "gemini-2.5-flash";
-
+const mem = osu.mem; // Correction pour Render
+const cpu = osu.cpu; // Correction pour Render
 /*
 `BLOCK_NONE`  -  Always show regardless of probability of unsafe content
 `BLOCK_ONLY_HIGH`  -  Block when high probability of unsafe content
@@ -70,9 +71,6 @@ const MODEL = "gemini-2.5-flash";
 const app = express();
 app.get('/', (req, res) => res.send('Bot Online'));
 app.listen(process.env.PORT || 3000);
-
-const mem = osu.mem; // Correction pour Render
-const cpu = osu.cpu; // Correction pour Render
 
 const safetySettings = [{
     category: HarmCategory.HARM_CATEGORY_HARASSMENT,
