@@ -132,9 +132,6 @@ app.listen(port, () => {
 
 // <=====[Register Commands And Activities]=====>
 
-import {
-  commands
-} from './commands.js';
 
 let activityIndex = 0;
 client.once('ready', async () => {
