@@ -28,10 +28,6 @@ import {
   getTextExtractor
 } from 'office-text-extractor'
 import osu from 'node-os-utils';
-const {
-  mem,
-  cpu
-} = osu;
 import axios from 'axios';
 import express from 'express';
 import config from './config.js';
@@ -124,7 +120,10 @@ app.listen(port, () => {
   console.log(`Serveur web actif sur le port ${port}`);
 });
 
-
+const {
+  mem,
+  cpu
+} = osu;
 
 // <==========>
 
