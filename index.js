@@ -33,7 +33,7 @@ const {
   cpu
 } = osu;
 import axios from 'axios';
-
+import express from 'express';
 import config from './config.js';
 import {
   client,
@@ -106,6 +106,15 @@ const workInDMs = config.workInDMs;
 const shouldDisplayPersonalityButtons = config.shouldDisplayPersonalityButtons;
 const SEND_RETRY_ERRORS_TO_DISCORD = config.SEND_RETRY_ERRORS_TO_DISCORD;
 
+// Configuration du port pour Render
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.get('/', (req, res) => res.send('Bot Gemini est en ligne !'));
+
+app.listen(port, () => {
+  console.log(`Serveur web actif sur le port ${port}`);
+});
 
 
 import {
