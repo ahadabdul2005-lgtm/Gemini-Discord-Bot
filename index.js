@@ -2269,5 +2269,11 @@ async function sendAsTextFile(text, message, orgId) {
 // <==========>
 console.log("Tentative de connexion avec le token :", token ? "Présent (OK)" : "Manquant (ERREUR)");
 client.login(token);
+client.login(token)
+  .then(() => console.log("✅ Connexion réussie à Discord !"))
+  .catch(err => {
+    console.error("❌ ÉCHEC DE CONNEXION DISCORD :");
+    console.error(err);
+  });
 
 client.login(token);
